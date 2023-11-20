@@ -1,0 +1,142 @@
+<html>
+<head>
+	<title>密码访问</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			font-family: sans-serif;
+			background-color: #f8f8f8;
+		}
+
+		h1 {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			background-color: #fff;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		input {
+			padding: 0.5rem;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			margin-bottom: 1rem;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		button {
+			padding: 0.5rem 1rem;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+			font-size: 1rem;
+			transition: background-color 0.2s;
+		}
+
+		button:hover {
+			background-color: #0069d9;
+		}
+
+		@media (min-width: 768px) {
+			form {
+				width: 50%;
+			}
+		}
+
+		@media (min-width: 992px) {
+			form {
+				width: 30%;
+			}
+		}
+	</style>
+<script type="text/javascript" charset="utf-8" src="https://lib.baomitu.com/jquery/1.10.2/jquery.min.js"></script>
+
+
+</head>
+<body>
+	<div>
+    <script>
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+        if (isMobileDevice()) {
+            
+        } else {
+            
+			document.body.innerHTML = "<h1 align='center'>不支持PC端访问<br>请使用移动设备访问</h1>";
+            var qrImage = document.createElement('img');
+            qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(window.location.href)}`;
+            qrImage.style.display = "block";
+            qrImage.style.margin = "0 auto";
+            document.body.appendChild(qrImage);
+			
+        }
+    </script>
+	<form onsubmit="return checkPassword()" style="
+    top: 10%;
+    left: 0%;
+    right: 0%;
+    margin-top: 5%;
+">
+		<h1 align="center" style=" 
+                    font-size: 25px; 
+                    color:#152c5b; 
+                    font-weight:bold;
+                     margin-bottom: 20px;
+                    ">输入密码解锁此网址</h1>
+        <p align="center" style="
+                    color:#7f8da0;  
+                    font-size: 15px;
+                    margin-bottom: 40px;
+                    ">此网址的访问受到限制，请输入密码进行查看</p>
+		
+		<div style="
+    position: relative;
+    text-align: center;
+"><input type="password" id="password" name="password" style="
+">
+		<button type="submit" class="btn btn-primary" style=" margin-bottom: 20px;">解锁</button></div>
+		
+	</form>
+	<div style="text-align: center;/* position: absolute; */bottom: 10%;left: 0%;right: 0%;">
+  <h5><a href="https://zppu-3-1319987891.cos-website.ap-guangzhou.tencentcos.cn/xiazhh-3.html?G=ly1kuai,S1hare&key=b41e9e0db765dcf12ae42a2b131fec66f6882413e5c02efe8a9338fe94c4c307f386ed1d4ea86a1d097f25b5338b5f2c9cb838302809e895a5663168c95dddead798894d5f8a8b5ca41a1b1af705b5faebe376a8b93c2ef8e501c608d32a8cc689179e63d985af2f40e4edba570b7a558173a85ba48fa4fbfd9c9b85d083cc12effdea0aa2fafa3855455b592af107022b47743371dfbbdcb611f0702a9a9dadf5335c12ce0929598fc3acdf550e57a44bd0ba4bca9c6de86acb120b8c0b0d82b6cdbacb44cf318a4b39a3bbb58daeb4528fef5c1fa9c8b9c47e253493d55200ac26f5ecf82a02ccc1bb41019d01b0e5&9g20231118">密码获取详细教程</a></h5>
+  <h3><a>↓ 获取密码方法 ↓</a></h3>
+  <div style="display: flex; justify-content: center;">
+    <img style="max-width: 43%;/* height: auto; */" src="https://p1.qpic.cn/qqgameedu/0/1fde4bdfa31ccc8287c49304b241bdf6/0" alt="暂无图片">
+  </div>
+  <p style="text-align: center;"><a>长按图片保存用VX扫一扫二维码<br>点击右下角详情，观看广告后自动复制密码！</a></p>
+</div>
+    </div>
+
+	<script>
+		function checkPassword() {
+			var password = document.getElementById("password").value;
+			if (password === "ddak") { 
+				window.location.href = "https://p2.qpic.cn/qqgameedu/0/f12e65a9cfe61dbbf9df2a9a53589d91/0"; 
+				return false;
+			} else {
+				alert("密码错误，请重新输入！");
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
